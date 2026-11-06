@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prose Objective Audit"
+  short_description: "Audit reader clarity and evidence fidelity"
+  default_prompt: "Use $prose-objective-audit to audit this document and propose only evidence-supported improvements."
