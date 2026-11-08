@@ -64,6 +64,22 @@ def save_new(path, data):
         f.write('\n')
 
 
+def paragraph_spans(content):
+    """Yield paragraph offsets without normalising text or splitting CRLF."""
+    start = end = None
+    for line in re.finditer(r'[^\r\n]*(?:\r\n|\r|\n|$)', content):
+        body = line.group().rstrip('\r\n')
+        if body.strip('\ufeff \t'):
+            if start is None:
+                start = line.start()
+            end = line.start() + len(body)
+        elif start is not None:
+            yield start, end
+            start = end = None
+    if start is not None:
+        yield start, end
+
+
 def snapshot(root, files, artifacts=(), generated=(), evidence=()):
     records, units = {}, []
     generated = {canonical(root, x) for x in generated}
@@ -82,10 +98,8 @@ def snapshot(root, files, artifacts=(), generated=(), evidence=()):
         content = decode_utf8(raw, name)
         if item['kind'] == 'evidence':
             continue
-        for match in re.finditer(r'[^\r\n]+(?:\r?\n(?![ \t]*\r?\n)[^\r\n]+)*', content):
-            if not match.group().strip('\ufeff \t'):
-                continue
-            units.append({'id': f'U{len(units)+1:05d}', 'source': name, 'start': match.start(), 'end': match.end(), 'quote': match.group()})
+        for start, end in paragraph_spans(content):
+            units.append({'id': f'U{len(units)+1:05d}', 'source': name, 'start': start, 'end': end, 'quote': content[start:end]})
     require(bool(units), 'no nonempty text units')
     return {'version': 1, 'sources': records, 'units': units}
 
@@ -232,6 +246,8 @@ def stage(root, manifest, proposed, out):
     out = scoped(root, relative)
     require(out != root and not out.exists(), 'scratch output already exists or is root')
     require(all(not scoped(root, name).is_relative_to(out) for name in manifest['sources']), 'scratch output contains input')
+    require(all(PurePosixPath(name).parts[0].casefold() != 'staged_manifest.json'
+                for name in manifest['sources']), 'reserved root path: staged_manifest.json')
     out.parent.mkdir(parents=True, exist_ok=True)
     temporary = Path(tempfile.mkdtemp(prefix='.audit-stage-', dir=out.parent))
     try:
