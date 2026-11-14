@@ -1,5 +1,11 @@
 # Validation scope
 
+## 14 November 2026: accepted-version comparison
+
+The entrypoint now compares revised titles, abstract openings and contribution statements with available earlier accepted versions. The purpose is to catch loss of a concrete problem, mechanism or result through accumulated qualifications. Earlier wording is restored only when it remains supported and clearer; necessary qualifications are retained. This publishes the 59-word local addition that followed the earlier targeted reader checks.
+
+This is an instruction-only change: the helper, record schema, UI metadata and invocation policy are unchanged. Frontmatter validation passed. The motivating document comparison is development evidence; no controlled improvement in editorial recall or independent semantic forward-test is claimed. The previous release history below remains applicable to its stated versions.
+
 ## 14 November 2026: targeted reader checks
 
 The entrypoint now explicitly checks whether the first Introduction paragraph establishes the setting, actors and task, and whether its transition establishes the research problem. It names conversational drafting residue and private instructions presented as evidence, while preserving relevant registration, amendment, reproducibility and AI-use disclosures. It also warns that candidate phrase matches need contextual review and that extractors may omit captions, tables or back matter. A concrete opening is an option, not a mandatory hook; wording does not establish AI authorship. The standalone-summary instruction now includes the locally installed clarification naming abstracts, highlights and graphical abstracts.

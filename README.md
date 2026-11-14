@@ -6,6 +6,8 @@ The skill distinguishes necessary corrections, useful improvements, optional pre
 
 Reader review explicitly covers the Introduction's opening and conversational drafting residue, including private instructions presented as evidence. It preserves relevant registration, amendment, reproducibility and AI-use disclosures. Keyword matches require contextual judgment; they do not establish AI authorship or require automatic deletion.
 
+When revising a title, abstract opening or contribution statement, the skill also compares available earlier accepted versions to check whether successive qualifications obscured a supported result. Historical acceptance does not override current evidence.
+
 ## Install
 
 Clone this repository into your Codex skills directory, using the folder name `prose-objective-audit`. For an installation that uses `~/.codex/skills`:
