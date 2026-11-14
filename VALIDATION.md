@@ -1,5 +1,11 @@
 # Validation scope
 
+## 14 November 2026: targeted reader checks
+
+The entrypoint now explicitly checks whether the first Introduction paragraph establishes the setting, actors and task, and whether its transition establishes the research problem. It names conversational drafting residue and private instructions presented as evidence, while preserving relevant registration, amendment, reproducibility and AI-use disclosures. It also warns that candidate phrase matches need contextual review and that extractors may omit captions, tables or back matter. A concrete opening is an option, not a mandatory hook; wording does not establish AI authorship. The standalone-summary instruction now includes the locally installed clarification naming abstracts, highlights and graphical abstracts.
+
+This is a narrow instruction/documentation update. The helper, record schema, UI metadata and invocation policy are unchanged. Local Python 3.12 validation ran 99 helper tests: 98 passed and one was skipped for unavailable Windows symlink privileges. Skill-frontmatter validation passed. These checks establish neither the editorial effect of the added instructions nor performance in other environments. The motivating review is development evidence; no independent forward-test, hidden benchmark or improvement in recall is claimed.
+
 ## 8 November 2026: paragraph inventory and staging reservation
 
 The helper now inventories wrapped paragraphs consistently across CR, LF and CRLF, including mixed endings and whitespace-only separator lines (which can also change older plain-LF inventories), without normalizing the source or changing its character-offset convention. A root file or directory named `staged_manifest.json` (case-insensitively) is rejected before staging creates output; harmless nested occurrences remain permitted. The record contract documents those behaviours, re-attestation when an older inventory differs, and the limits of macro/reference token probes. The core editorial instructions, UI metadata and independent-review guidance are unchanged.

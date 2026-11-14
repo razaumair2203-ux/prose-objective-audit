@@ -4,6 +4,8 @@ A Codex skill for substantial manuscript, abstract, proposal and report audits. 
 
 The skill distinguishes necessary corrections, useful improvements, optional preferences and unresolved questions. It includes a Python helper for frozen source records, exact edit spans, evidence locators and scratch staging. The helper checks edit integrity; it cannot establish scientific truth or prose quality.
 
+Reader review explicitly covers the Introduction's opening and conversational drafting residue, including private instructions presented as evidence. It preserves relevant registration, amendment, reproducibility and AI-use disclosures. Keyword matches require contextual judgment; they do not establish AI authorship or require automatic deletion.
+
 ## Install
 
 Clone this repository into your Codex skills directory, using the folder name `prose-objective-audit`. For an installation that uses `~/.codex/skills`:
