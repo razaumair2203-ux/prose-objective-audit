@@ -1,5 +1,11 @@
 # Validation scope
 
+## 14 November 2026: helper documentation consolidation
+
+The 291-word helper overview and CLI block have been replaced in the entrypoint with a compact routing paragraph. The entrypoint is now 1,811 words, down from 2,047. Commands, rich-format binding, coverage distinctions, unavailable-compiler handling and byte-preservation guidance are maintained in `references/records.md`, with overlapping explanations merged into its existing contract. The accepted-version comparison and the earlier opening-orientation/conversational-provenance safeguards are retained. No helper implementation, record schema, UI metadata or invocation-policy change is included.
+
+Skill-frontmatter validation and all linked local Markdown targets passed. The unchanged helper suite ran 99 tests: 98 passed and one skipped for unavailable Windows symlink privileges. These are structural/compatibility checks, not a fresh semantic benchmark or evidence of better editorial recall. The earlier version-specific validation entries below are preserved.
+
 ## 14 November 2026: accepted-version comparison
 
 The entrypoint now compares revised titles, abstract openings and contribution statements with available earlier accepted versions. The purpose is to catch loss of a concrete problem, mechanism or result through accumulated qualifications. Earlier wording is restored only when it remains supported and clearer; necessary qualifications are retained. This publishes the 59-word local addition that followed the earlier targeted reader checks.

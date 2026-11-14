@@ -50,19 +50,7 @@ Read changed paragraphs together with their neighbors and check the whole argume
 
 When shortening or reframing, compare information as well as propositions. Identify which mechanism, distinction, scope boundary, comparison or evidence context lets this audience understand why the result matters. Separate removed repetition, equivalent rephrasing, reduced specificity and omitted content. A shorter statement can remain true while losing its explanatory value. For a standalone summary, including an abstract, highlights or a graphical abstract, information retained only in the body does not establish adequate coverage. Under a word limit, compare feasible selections and record material omissions and their tradeoffs; neither retain every term/result nor treat compression as sufficient justification for a deletion. Check the final text as a reader: can its central contribution and limits be reconstructed without supplying missing context?
 
-For a substantial audit, use [the record contract](references/records.md) and the standard-library helper:
-
-```text
-python <skill>/scripts/audit_guard.py snapshot --root PROJECT --files section.md --evidence facts.txt --out WORK/run/snapshot.json
-python <skill>/scripts/audit_guard.py check --root PROJECT --snapshot WORK/run/snapshot.json --record WORK/run/review.json
-python <skill>/scripts/audit_guard.py stage --root PROJECT --snapshot WORK/run/snapshot.json --record WORK/run/review.json --out WORK/run/staged
-```
-
-Use an explicit set of relevant UTF-8 files. For rich formats, the helper can bind a reviewed text export and hash the original with `--artifacts paper.pdf`; label extraction/visual limits in the record. It is an edit-integrity helper, not a LaTeX/Word/PDF parser. Direct native reading is still required. For a short passage, a concise quoted report can replace the machine ledger; do not manufacture scaffolding for a one-sentence decision.
-
-The helper checks source hashes, exact spans, complete/unique unit attestations, evidence quote/range/hash binding, some declared token changes, required review statements and collisions. Its numeric/unit/negation probes are incomplete heuristics; changed actors, conditions, formulas, causal implications and many other meaning changes still require reader judgment. Use `--evidence` for supporting code/data/log text: it is hash-frozen and line-addressable without pretending every block was audited prose. It stages all validated edits into a new scratch directory, preserving relative paths and original bytes outside changed spans. It never applies them to source. A green result means these structural checks passed; the reader's comprehension, scientific truth, semantic support and prose quality remain judgments. A recorded semantic review can itself be wrong.
-
-Coverage has separate dimensions: **inventory scope**, **reader attestations**, **source/evidence checks**, **rendered inspection**, and **derived-copy checks**. State partial counts and exclusions, not one universal COMPLETE. Do not populate ledgers by automatically copying quotes and assigning "ok"; a quote match proves location, not reading. An unavailable requested check is **not verified**, never PASS. Do not run an unavailable compiler and infer success from a leftover PDF.
+For a substantial audit, use [the record contract](references/records.md) and `scripts/audit_guard.py` for frozen sources, exact edits, evidence binding and scratch staging. It checks edit integrity, not scientific truth or prose quality, and never applies edits to source. Report inventory, reading, evidence, rendered and derived-copy coverage separately. Do not auto-fill reader attestations or mark unavailable checks passed.
 
 ## Apply and close when authorized
 

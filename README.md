@@ -51,3 +51,15 @@ Paragraph inventories support CR, LF and CRLF, including mixed endings and blank
 Token checks read edits in complete document context. They catch a unit-only `ms` → `s` change in `12 ms` and removal of a contraction suffix. Capitalization and apostrophe typography alone do not change strength tokens. Reordered qualifiers still require explicit scope review; an honestly assessed meaning-preserving reorder does not need scientific evidence solely because its token order changed.
 
 These checks remain incomplete heuristics. A false meaning or support assessment can pass. Native rendering, audience comprehension, factual support and scientific validity require real inspection and judgment. No test count or reviewer verdict establishes optimality, editorial superiority, publication readiness or acceptance.
+
+## Revision history
+
+Detailed changes, checks and limits are retained in [VALIDATION.md](VALIDATION.md). Git commits identify the public versions; no new editorial-performance claim is implied by a version update.
+
+| Version | Change and details |
+| --- | --- |
+| Latest: helper documentation consolidation | Shorter entrypoint; helper commands and detailed limits maintained in the record contract. [Validation](VALIDATION.md#14-november-2026-helper-documentation-consolidation). |
+| [0ac3a670](https://github.com/razaumair2203-ux/prose-objective-audit/commit/0ac3a670e5df98deae7edb380a0ce3ffb4ec0d8b) | Compare revised titles, abstract openings and contributions with earlier accepted versions while retaining evidence-based qualifications. [Validation](VALIDATION.md#14-november-2026-accepted-version-comparison). |
+| [d7c7408](https://github.com/razaumair2203-ux/prose-objective-audit/commit/d7c7408af381eb101402822436ecf15d3f4af029) | Introduction orientation, conversational provenance and false-alarm safeguards; standalone-summary clarification. [Validation](VALIDATION.md#14-november-2026-targeted-reader-checks). |
+| [8f9f794](https://github.com/razaumair2203-ux/prose-objective-audit/commit/8f9f794) | Paragraph inventory across line endings and staging-manifest collision protection. [Validation](VALIDATION.md#8-november-2026-paragraph-inventory-and-staging-reservation). |
+| [5001979](https://github.com/razaumair2203-ux/prose-objective-audit/commit/5001979) | Initial public skill with contextual edit safeguards. [Validation](VALIDATION.md#earlier-contextual-token-revision-6-november-2026). |
